@@ -1,28 +1,32 @@
+// Import necessary dependencies and components from React and other modules
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-
+// Define the main component for the registration page
 export default function RegisterPage() {
+    // Define and initialize state variables for name, email, and password
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // yarn add axios instead of fetch easier to send requests
+    // Define an async function to handle user registration
     async function registerUser(ev) {
         ev.preventDefault();
         try {
+            // Send a registration request to the server with user input (name, email, and password)
             await axios.post('/register', {
                 name,
                 email,
                 password
             });
-            alert('Registeration successful. Now you can log in');
+            alert('Registration successful. Now you can log in'); // Show success message
         } catch (e) {
-            alert('Registration failed. Please try again later');
+            alert('Registration failed. Please try again later'); // Show an error message on failure
         }
-
     }
+
+    // Render the registration form and related content
     return (
         <div className="mt-4 grow flex items-center justify-around">
             <div className="-mt-64">
