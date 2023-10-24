@@ -24,6 +24,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} /> // Define the login page route
           <Route path="/register" element={<RegisterPage />} /> // Define the registration page route
           <Route path="/account/:subpage?" element={<AccountPage />} /> // Define the account page route with optional subpages
+          <Route path="/account/:subpage/:action" element={<AccountPage />} /> // Define the account page route with optional subpages
         </Route>
       </Routes>
     </UserContextProvider>

@@ -22,7 +22,7 @@ app.use(cookieParser());
 // Enable CORS for the specified origin
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:5174',
+    origin: 'http://localhost:5173',
 }));
 
 // Connect to the MongoDB database using the provided URL
